@@ -311,8 +311,8 @@
     scroll-behavior: smooth; 
        }
     
-/* Default link color */
-.navbar-nav .nav-link {
+
+.navbar-nav .nav-link.active {
     color: rgba(255, 255, 255, 0.75); /* Light color for inactive */
     transition: color 0.3s ease-in-out;
 }
@@ -620,7 +620,7 @@
             navLinks.forEach((link) => {
                 link.classList.remove("active-link"); // Remove active class from all links
                 if (link.getAttribute("href").includes(currentSection)) {
-                    link.classList.add("active-link"); // Add active class to the current link
+                    link.classList.add("active-link"); 
                 }
             });
         }
