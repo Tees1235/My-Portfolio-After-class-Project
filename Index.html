@@ -9,185 +9,206 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-
         .section {
             height: 100vh;
             padding: 50px;
         }
 
         p {
-    font-family: 'Roboto', sans-serif;
-    color: #eee;
+            font-family: 'Roboto', sans-serif;
+            color: #eee;
         }
 
-body {
+        body {
+            position: relative;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #2E2E2E;
+            color: white;
+            margin: 0;
+            cursor: pointer;
+            overflow: auto;
+
+
+        }
+
+        /* Hero Section */
+        .hero{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 20px;
+            overflow: auto;
+        }
+
+        .hero-content{
+            max-width: 600px;
+             position: relative; 
+    z-index: 15; 
+    visibility: visible; 
+        }
+
+        .hero{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero span{
+            color: #FFD700;
+        }
+
+        .hero p{
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #E0E0E0;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+             z-index: 12; 
     position: relative;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #2E2E2E; 
-    color: white;
-}
+        }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-     padding: 120px 20px 20px;
-}
+        .btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: 0.3s ease;
+             z-index: 5;
+    position: relative;
+        }
 
-.hero-content {
-    max-width: 600px;
-}
+        .btn-primary {
+            background-color: #FFD700;
+            
+            color: black;
+             cursor: pointer;
+             z-index: 10;
+        }
 
-.hero h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
-    margin-bottom: 15px;
-}
+        .btn-primary:hover {
+            background-color: #FFA500;
+            
+            color: white;
+        }
 
-.hero h1 span {
-    color: #FFD700; /* Gold for highlight */
-}
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #FFD700;
+            color: #FFD700;
+            cursor: pointer;
+             z-index: 10;
+        }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 25px;
-    color: #E0E0E0; /* Light Grey */
-}
+        .btn-secondary:hover {
+            background-color: #FFD700;
+            color: black;
+        }
 
-/* Buttons */
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
 
-.btn {
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    transition: 0.3s ease;
-}
+        .project-card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
 
-.btn-primary {
-    background-color: #FFD700; /* Gold */
-    color: black;
-}
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
 
-.btn-primary:hover {
-    background-color: #FFA500; /* Orange */
-    color: white;
-}
+        .project-card img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-.btn-secondary {
-    background-color: transparent;
-    border: 2px solid #FFD700;
-    color: #FFD700;
-}
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
 
-.btn-secondary:hover {
-    background-color: #FFD700;
-    color: black;
-}
-.projects-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
+        .project-card h3 {
+            color: #FFD700;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 15px;
+        }
 
-.project-card {
-    background: #1a1a1a;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
+        .project-card p {
+            color: #bfbfbf;
+            font-family: 'Open Sans', sans-serif;
+        }
 
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
-}
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #FFD700;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
 
-.project-card img {
-    width: 100%;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.project-card:hover img {
-    transform: scale(1.1);
-}
-
-.project-card h3 {
-    color: #FFD700;
-    font-family: 'Poppins', sans-serif;
-    margin-top: 15px;
-}
-
-.project-card p {
-    color: #bfbfbf;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #FFD700;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.btn:hover {
-    background-color: #FFA500;
-}
+        .btn:hover {
+            background-color: #FFA500;
+        }
 
 
 
 
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #FFD700;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
-}
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #FFD700;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
 
-.btn:hover {
-    background-color: #FFA500;
-}
-  .sidebar {
+        .btn:hover {
+            background-color: #FFA500;
+        }
+
+        .sidebar {
             height: 100vh;
             background-color: #111;
             color: white;
             width: 250px;
             position: fixed;
-            left: 0;
+            left: -250px;
             top: 0;
-            transform: translateX(-100%);
             transition: 0.3s ease-in-out;
             padding: 20px;
+             transform: translateX(-100%);
+           
         }
 
         .sidebar.show {
-            transform: translateX(0);
+             transform: translateX(250px);
         }
 
         .sidebar ul {
@@ -209,15 +230,15 @@ body {
         }
 
         .toggle-btn {
-              position: fixed;
-    left: 10px;
-    top: 70px; 
-    background-color: #FFD700;
-    color: black;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 1000;
+            position: fixed;
+            left: 10px;
+            top: 70px;
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 1000;
         }
 
         .content {
@@ -230,15 +251,85 @@ body {
             margin-left: 250px;
         }
 
+        .content {
+            transition: margin-left 0.3s ease-in-out;
+        }
 
-    </style>
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            left: -250px;
+            top: 0;
+            height: 100vh;
+            background-color: #111;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1100;
+        }
+
+        .sidebar.show {
+            transform: translateX(250px);
+            
+        }
+
+    
+        .sidebar-open .content {
+            margin-left: 250px;
+        }
+         canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+        @keyframes aurora {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(-45deg, #120f26, #5f585a, #19181a, #e6dce1);
+            background-size: 300% 300%;
+            animation: aurora 10s infinite linear alternate;
+            z-index: -1;
+        }
+       html {
+    scroll-behavior: smooth; 
+       }
+    
+/* Default link color */
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75); /* Light color for inactive */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Make the active section white */
+.navbar-nav .nav-link.active {
+    color: white !important;
+    font-weight: bold;
+}
+
+</style>
 </head>
-
 
 <body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-offset="80">
 
-
     
+
     <button class="toggle-btn" onclick="toggleSidebar()">
         <i class="fas fa-bars"></i>
     </button>
@@ -246,14 +337,14 @@ body {
 
     <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            
+
             <a class="navbar-brand" href="#">Zimal Waqar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="#hero">
                             <i class="fa fa-home"></i> Home
@@ -265,20 +356,20 @@ body {
                         </a>
                     </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">
-                        <i class="fa fa-briefcase"></i> My Projects
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">
-                        <i class="fa fa-envelope"></i> Contact
-                    </a>
-                </li>
-                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            <i class="fa fa-briefcase"></i> My Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fa fa-envelope"></i> Contact
+                        </a>
+                    </li>
+
                 </ul>
             </div>
-            
+
 
         </div>
     </nav>
@@ -306,141 +397,244 @@ body {
             </li>
         </ul>
     </nav>
-<section id="hero" class="hero">
-    <div class="hero-content">
-        <h1>Hey there! 👋 I'm <span>Zimal Waqar</span></h1>
-        <p>An aspiring web developer passionate about creating interactive and modern websites. I'm currently learning
-            and building cool projects to enhance my skills. 🚀</p>
-        <div class="buttons">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
-        </div>
-    </div>
-</section>
+    
 
-    <section id="about" style="background: #1a1a1a; padding: 60px 20px; color: white; text-align: center;">
-        <div class="container">
-            <h2 style="font-family: 'Poppins', sans-serif; color: #FFD700;">About Me</h2>
-            <div style="max-width: 800px; margin: auto;">
-                <p style="font-family: 'Open Sans', sans-serif; color: #bfbfbf; font-size: 18px; line-height: 1.6;">
-                    Hi, I'm <strong>Zimal Waqar</strong>, a passionate web developer with a keen interest in
-                    creating modern and interactive websites. I specialize in front-end development,
-                    focusing on **responsive design, animations, and user-friendly interfaces**.
-                </p>
-                <p style="font-family: 'Open Sans', sans-serif; color: #bfbfbf; font-size: 18px; line-height: 1.6;">
-                    My journey in web development started with a curiosity for how websites work. Now,
-                    I enjoy building sleek and engaging web experiences using **HTML, CSS, JavaScript, and Bootstrap**.
-                    I love learning new technologies and continuously improving my skills to bring creative ideas to life.
-                </p>
+    <section id="hero" class="hero">
+        <div class="hero-content">
+
+            <h1>Hey there! 👋 I'm <span>Zimal Waqar</span></h1>
+            <p>An aspiring web developer passionate about creating interactive and modern websites. I'm currently
+                learning
+                and building cool projects to enhance my skills. 🚀</p>
+            
+            <div class="buttons">
+                <a href="#projects"id="viewWorkBtn" class="btn btn-primary">View My Work</a>
+                <a href="#contact" id="contactMeBtn" class="btn btn-secondary">Contact Me</a>
             </div>
-    
-            <div style="margin-top: 30px;">
-                <h3 style="color: #FFD700;">Skills & Expertise</h3>
-                <ul style="list-style: none; padding: 0; font-size: 18px;">
-                    <li>✅ HTML, CSS, Bootstrap</li>
-                    <li>✅ JavaScript & Front-End Development</li>
-                    <li>✅ Responsive & Mobile-Friendly Design</li>
-                    <li>✅ UI/UX & Interactive Animations</li>
-                </ul>
-            </div>
-    
-            <div style="margin-top: 30px;">
-                <a href="#projects" class="btn"
-                    style="background: #FFD700; color: black; padding: 12px 20px; border-radius: 5px; font-size: 16px; text-decoration: none;">
-                    View My Work
-                </a>
-                <a href="#contact" class="btn"
-                    style="border: 2px solid #FFD700; color: #FFD700; padding: 12px 20px; border-radius: 5px; font-size: 16px; text-decoration: none;">
-                    Get in Touch
-                </a>
-            </div>
+        </div>
+    </section>
+<div class="aurora-bg"></div>
+    <section id="about" style="background: transparent; padding: 60px 20px; color: white; text-align: center;">
+        <div class="container"></div>
+
+        <h2 style="font-family: 'Poppins', sans-serif; color: #FFD700;">About Me</h2>
+        <div style="max-width: 800px; margin: auto;">
+            <p style="font-family: 'Open Sans', sans-serif; color: #bfbfbf; font-size: 18px; line-height: 1.6;">
+                Hi, I'm <strong>Zimal Waqar</strong>, a passionate web developer with a keen interest in
+                creating modern and interactive websites. I specialize in front-end development,
+                focusing on **responsive design, animations, and user-friendly interfaces**.
+            </p>
+            <p style="font-family: 'Open Sans', sans-serif; color: #bfbfbf; font-size: 18px; line-height: 1.6;">
+                My journey in web development started with a curiosity for how websites work. Now,
+                I enjoy building sleek and engaging web experiences using **HTML, CSS, JavaScript, and Bootstrap**.
+                I love learning new technologies and continuously improving my skills to bring creative ideas to life.
+            </p>
+        </div>
+
+        <div style="margin-top: 30px;">
+
+            <h3 style="color: #FFD700;">Skills & Expertise</h3>
+            <ul style="list-style: none; padding: 0; font-size: 18px;">
+                <li>✅ HTML, CSS, Bootstrap</li>
+                <li>✅ JavaScript & Front-End Development</li>
+                <li>✅ Responsive & Mobile-Friendly Design</li>
+                <li>✅ UI/UX & Interactive Animations</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="#projects" class="btn"
+                style="background: #FFD700; color: black; padding: 12px 20px; border-radius: 5px; font-size: 16px; text-decoration: none;">
+                View My Work
+            </a>
+            <a href="#contact" class="btn"
+                style="border: 2px solid #FFD700; color: #FFD700; padding: 12px 20px; border-radius: 5px; font-size: 16px; text-decoration: none;">
+                Get in Touch
+            </a>
+        </div>
         </div>
     </section>
 
     </div>
-<section id="projects" style="background: #121212; padding: 60px 20px; text-align: center; color: white;">
-    <div class="container">
-        <h2 style="font-family: 'Poppins', sans-serif; color: #FFD700;">My Projects</h2>
-        <p style="font-family: 'Open Sans', sans-serif; color: #bfbfbf;">
-            Here are some of my recent projects showcasing my skills in web development.
-        </p>
-
-        <div class="projects-container">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="127.0.0.1_3004_Pseudo.claases.html.png" alt="Project 1">
-                <h3>Portfolio Website</h3>
-                <p>A fully responsive and animated personal portfolio website.</p>
-                <a href="https://github.com/Tees1235/Pseudo-Classes-After-Class-Project.git" target="_blank" class="btn">View Project</a>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="project2.jpg" alt="Project 2">
-                <h3>Interactive Web App</h3>
-                <p>A dynamic and interactive web application using JavaScript.</p>
-                <a href="https://your-project-link.com" target="_blank" class="btn">View Project</a>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="project3.jpg" alt="Project 3">
-                <h3>Bootstrap Landing Page</h3>
-                <p>A modern and stylish landing page built with Bootstrap.</p>
-                <a href="https://github.com/Tees1235/Introduction-to-Bootstrap.git" target="_blank" class="btn">View Project</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<section id="contact" style="background: #121212; padding: 60px 0; text-align: center; color: #ffffff;">
-    <div class="container">
-        <h2 style="font-family: 'Poppins', sans-serif; color: #ffffff;">Get in Touch</h2>
-        <p style="font-family: 'Open Sans', sans-serif; color: #bfbfbf;">
-            Have any questions or want to work together? Drop me a message!
-        </p>
-        <form>
-            <input type="text" placeholder="Your Name" required style="width: 80%; padding: 12px; margin: 10px; border-radius: 5px; border: none; 
-                          background: #333333; color: #ffffff;">
-            <input type="email" placeholder="Your Email" required style="width: 80%; padding: 12px; margin: 10px; border-radius: 5px; border: none; 
-                          background: #333333; color: #ffffff;">
-            <textarea placeholder="Your Message" required style="width: 80%; padding: 12px; margin: 10px; border-radius: 5px; border: none; 
-                             background: #333333; color: #ffffff; height: 120px;"></textarea>
-            <br>
-            <button type="submit" style="background: #28a745; color: white; padding: 12px 25px; border: none; 
-                           border-radius: 5px; cursor: pointer; font-size: 16px; transition: 0.3s;">
-                Send Message
-            </button>
-        </form>
-        <div style="margin-top: 20px;">
-            <p><strong>Email:</strong> anilaw318@gmail.com</p>
-            <p><strong>Phone:</strong> 03080103191</p>
-            <p><strong>Follow me:</strong>
-                <a href="#" style="color: #28a745; text-decoration: none;">LinkedIn</a> |
-                <a href="#" style="color: #28a745; text-decoration: none;">GitHub</a>
+    <section id="projects" style="background: transparent; padding: 60px 20px; text-align: center; color: white;">
+        <div class="container">
+            <h2 style="font-family: 'Poppins', sans-serif; color: #FFD700;">My Projects</h2>
+            <p style="font-family: 'Open Sans', sans-serif; color: #bfbfbf;">
+                Here are some of my recent projects showcasing my skills in web development.
             </p>
+
+            <div class="projects-container">
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="127.0.0.1_3000_Index.html (4).png" alt="Project 1">
+                    <h3>Portfolio Website</h3>
+                    <p>A fully responsive and animated personal portfolio website.</p>
+                    <a href="https://github.com/Tees1235/My-Portfolio-After-class-Project.git" target="_blank"
+                        class="btn">View Project</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="127.0.0.1_3002_Index20.html.png" alt="Project 2">
+                    <h3>Hobby Section</h3>
+                    <p>An interactive and visually appealing section showcasing my hobbies, with animations and smooth
+                        UI.</p>
+                    <a href="https://github.com/Tees1235/Hobbies-containers.git" target="_blank" class="btn">View
+                        Project</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="127.0.0.1_3002_Activity1.html.png" alt="Project 3">
+                    <h3>Pagination Project</h3>
+                    <p>A clean and interactive pagination system that enhances navigation, making content browsing
+                        seamless and user-friendly.
+                        Styled with a modern UI for an engaging experience.</p>
+                    <a href="https://github.com/Tees1235/Pagination-After-Class-Project.git" target="_blank"
+                        class="btn">View Project</a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+
+
+    <section id="contact" style="background: transparent; padding: 60px 0; text-align: center; color: #ffffff;">
+        <div class="container">
+            <h2 style="font-family: 'Poppins', sans-serif; color: #ffffff;">Get in Touch</h2>
+            <p style="font-family: 'Open Sans', sans-serif; color: #bfbfbf;">
+                Have any questions or want to work together? Drop me a message!
+            </p>
+            <form>
+                <input type="text" placeholder="Your Name" required style="width: 80%; padding: 12px; margin: 10px; border-radius: 5px; border: none; 
+                          background: #333333; color: #ffffff;">
+                <input type="email" placeholder="Your Email" required style="width: 80%; padding: 12px; margin: 10px; border-radius: 5px; border: none; 
+                          background: #333333; color: #ffffff;">
+                <textarea placeholder="Your Message" required style="width: 80%; padding: 12px; margin: 10px; border-radius: 5px; border: none; 
+                             background: #333333; color: #ffffff; height: 120px;"></textarea>
+                <br>
+                <button type="submit" style="background: #28a745; color: white; padding: 12px 25px; border: none; 
+                           border-radius: 5px; cursor: pointer; font-size: 16px; transition: 0.3s;">
+                    Send Message
+                </button>
+            </form>
+            <div style="margin-top: 20px;">
+                <p><strong>Email:</strong> anilaw318@gmail.com</p>
+                <p><strong>Phone:</strong> 03080103191</p>
+                <p><strong>Follow me:</strong>
+                    <a href="#" style="color: #28a745; text-decoration: none;">LinkedIn</a> |
+                    <a href="#" style="color: #28a745; text-decoration: none;">GitHub</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
 
 </body>
 <script>
-     document.addEventListener("DOMContentLoaded", function () {
-            // Initialize Bootstrap ScrollSpy
-            var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-                target: "#navbar-example",
-                offset: 80
-            });
 
-            // Add event listener to toggle button
-            document.querySelector(".toggle-btn").addEventListener("click", function () {
-                document.getElementById("sidebar-nav").classList.toggle("show");
-            });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Bootstrap ScrollSpy
+        var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: "#navbar-example",
+            offset: 80
         });
 
+        // Select sidebar and toggle button
+        const sidebar = document.getElementById("sidebar-nav");
+        const toggleBtn = document.querySelector(".toggle-btn");
+
+        // Toggle sidebar when button is clicked
+        toggleBtn.addEventListener("click", function () {
+            sidebar.classList.toggle("show");
+
+        
+            document.body.classList.toggle("sidebar-open");
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener("click", function (event) {
+            if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                sidebar.classList.remove("show");
+                document.body.classList.remove("sidebar-open");
+            }
+        });
+    });
+
+    const canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let particles = [];
+
+    
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animate);
+    }
+
+   
+    animate();
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("viewWorkBtn").addEventListener("click", function () {
+            document.getElementById("portfolio").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.getElementById("contactBtn").addEventListener("click", function () {
+            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+        });
+    });
+
+    toggleBtn.addEventListener("click", function () {
+        sidebar.classList.toggle("show");
+        document.querySelector(".content").classList.toggle("shift");
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll("#navbarNav .nav-link");
+        const sections = document.querySelectorAll("section");
+
+        function updateActiveLink() {
+            let currentSection = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active-link"); // Remove active class from all links
+                if (link.getAttribute("href").includes(currentSection)) {
+                    link.classList.add("active-link"); // Add active class to the current link
+                }
+            });
+        }
+
+        // Initial update on page load
+        updateActiveLink();
+
+        // Update on scroll
+        window.addEventListener("scroll", updateActiveLink);
+    });
+
 </script>
+
+
 </body>
 
 
